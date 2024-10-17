@@ -1,15 +1,22 @@
 {
   "name": "samsung-lfd",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A Node module to control Samsung large format displays using LAN-TCP or RS-232 with JS and human friendly commands",
   "main": "samsungd.js",
-  "keywords": ["samsung", "display", "control", "monitor", "mdc", "lfd"],
+  "keywords": [
+    "samsung",
+    "display",
+    "control",
+    "monitor",
+    "mdc",
+    "lfd"
+  ],
   "author": {
     "name": "Mariusz Czernik <mariusz@infotechnika.pl>"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/magik1969/samsung-lfd2.git"
+    "url": "git+https://github.com/magik1969/samsung-lfd.git"
   },
   "dependencies": {
     "raw-device": "1.1.x",
