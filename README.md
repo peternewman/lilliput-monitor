@@ -1,11 +1,11 @@
 # Introduction
-`samsung-lfd` is Node module to control Samsung large format displays over LAN-TCP or RS232-serial with JS and human friendly commands. It is NOT for use with Samsung TV sets.
+`samsung-lfd` is a Node module to control Samsung large format displays over LAN-TCP or RS232-serial with JS and human friendly commands. It is NOT for use with Samsung TV sets.
 
 ## Main features
 - different connection modes: tcp/serial/stream
 - different schemas of connect-disconnect cycle
 - command queuing and timing management
-- events driven
+- event driven
 
 ## Usage
 ```js
@@ -41,12 +41,12 @@ dev.process('power on', 'status?'); //power display on and ask for its status
 */
 ```
 # SamsungD Object
-The primary exported object is `SamsungD`. It extensively uses `RAW` object from `raw-device` module as its prototype. Data neccesery to process commands is in `samsungd.xml` file.
+The primary exported object is `SamsungD`. It extensively uses `RAW` object from `raw-device` module as its prototype. Data necessary to process commands is in `samsungd.xml` file.
 
 ## Constructor `new SamsungD(AddressObject, OptionsObject)`
 - `AddressObject <Object>` - required. Use only properties associated with the desired mode (serial, tcp, stream)
     - `name <string>` - default 'SamsungLFD'. The name is included in response object to easy identify a display
-    - `id <number>` - default 0. NOTEs for stream mode: all displays in RS-232 chain must have unique id number. If you set id: 0xFE all displays execute commands, but no one of them return a response.  
+    - `id <number>` - default 0. NOTEs for stream mode: all displays in RS-232 chain must have unique id number. If you set id: 0xFE all displays execute commands, but none of them return a response.  
     //for serial
     - `path <string>` - required. Use valid serial path available in system.
     - `baudRate <number>` - default 9600
@@ -57,13 +57,13 @@ The primary exported object is `SamsungD`. It extensively uses `RAW` object from
     - `host <string>` - required. Use valid IP address of display
     - `port <number>` - default 1515    
     //for stream
-    - `stream <Stream>` - required. The stream must be opened read/write Node stream. This mode is used when multiple displays are chained with RS232 cables and connected to single system serial port. SamsungD object does not care about the stream. You have to maintain stream yourself (open, close, error handling).
+    - `stream <Stream>` - required. The stream must be an opened read/write Node stream. This mode is used when multiple displays are chained with RS232 cables and connected to a single system serial port. SamsungD object does not care about the stream. You have to maintain stream yourself (open, close, error handling).
 - `OptionsObject <Object>` - optional, default is `{wDuration: 1000, rDuration: 1000, disconnect: true, splitter: {timeout: 700}}`
     - `wDuration <number>` - Inter-command period [ms] for set commands. A time for device to process command and to prepare and send a response.
     - `rDuration <number>` - Inter-command period [ms] for read commands. A time for device to prepare and send a response.
     - `disconnect <boolean|number>` - Connecion cycle scheme. Use true, false or timeout[ms]. True means close connection when command queue is empty, false means do not close connection, number means close connection after some ms. of connection inactivity.
     - `splitter <Object>` Used to select one among three supported transform streams which merge incoming data chunks and split it into valid messages. Only single property from delimiter, regex, timeout can be used.
-        - `timeout <number>` - use `@serialport/parser-inter-byte-timeout` with timeout. Response is completed if inter-byte time is longer then timeout. Please consider that timeout must be shorter than durations (inter-command period) and disconnect time (if disconnect use timeout scheme)
+        - `timeout <number>` - use `@serialport/parser-inter-byte-timeout` with timeout. Response is completed if inter-byte time is longer then timeout. Please consider that timeout must be shorter than durations (inter-command period) and disconnect time (if disconnect uses timeout scheme)
 
 ## Method `process(...commands)`
 Encode and send commands to display. You can use multiple commands in single call. Commands will be queued and executed FIFO.
@@ -74,7 +74,7 @@ Some examples:
 `power off` - power off the display    
 `input HDMI1` - set active input to HDMI1  
 `sernum?` - get display serial number.   
-`wallDef 3x3,1` - set matrix/wall mode (using internal signal scaller). This sets the display as upper left in 3x3 wall.  
+`wallDef 3x3,1` - set matrix/wall mode (using internal signal scaler). This sets the display as upper left in 3x3 wall.  
 Not all MDC commands are supported. All supported commands with their usage are listed in `samsungd.xml` file.  
 NOTE: You can also use MDC commands which are not listed in XML file. In this case use command number, not a name. Parameters (if any) must also be numbers. For hex numbers use `0x` prefix. Example: `0x85 80`. This sets display max working temperature to 80<sup>o</sup>C
 
@@ -103,7 +103,7 @@ Emited when device response is properly decoded.
     - `status <'OK'|'ERR'>` - response status. Corresponds to Ack(A) and Nak(N) in MDC
 
 ## Event: `connectionData`
-A data which comes directly from device port "as is". Not decoded, merged or chopped by splitter. Event is not emited in stream mode.
+Data which comes directly from device port "as is". Not decoded, merged or chopped by splitter. Event is not emited in stream mode.
 - `dataObj <Object>`
     - `name <string>` - device name
     - `address <string>` - device address as string
