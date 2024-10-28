@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dev driver="samsungd">
 <!--
-    There's a subset of Samsung MDC commands below. They were chosen as most usefull for common tasks.
-    You can add, remove or modify them as long as you know what you are doing and XML document remains valid.
+    There's a subset of Samsung MDC commands below. They were chosen as most useful for common tasks.
+    You can add, remove or modify them as long as you know what you are doing and the XML document remains valid.
 
     Mode attribute says if command is read only or read/write.
     Values of wDuration and rDuration are defined in miliseconds.
-    Number values can be decimal or hexadecimal. Hex numvers must be used with prefix 0x
+    Number values can be decimal or hexadecimal. Hex numbers must be used with prefix 0x
 -->
     <command name="status" code="0x00" mode="r">
-    <!-- Get surrent status of display. Return object. Command: 'status?' -->
+    <!-- Get current status of display. Return object. Command: 'status?' -->
         <value name="power">
             <item name="on" value="0x01"/>
             <item name="off" value="0x00"/>
@@ -20,6 +20,9 @@
             <item name="off" value="0x00"/>
         </value>
         <value name="input">
+            <!-- Ensure this list matches the input command -->
+            <item name="Component" value="0x08"/>
+            <item name="AV" value="0x0C"/>
             <item name="PC" value="0x14"/>
             <item name="DVI" value="0x18"/>
             <item name="MagicInfo" value="0x20"/>
@@ -54,6 +57,7 @@
     <command name="input" code="0x14" mode="rw" wDuration="5000">
         <!-- Set/get current input. Return string. Command: 'input input_name', 'input?' -->
         <value>
+            <!-- Ensure this list matches the status command's input field -->
             <item name="Component" value="0x08"/>
             <item name="AV" value="0x0C"/>
             <item name="PC" value="0x14"/>
@@ -99,7 +103,7 @@
             <item name="8x8" value="0x88"/>
             <item name="9x9" value="0x99"/>
             <item name="10x10" value="0xAA"/>
-            <!-- other divs available but rather no used -->
+            <!-- other divs available but rarely used -->
         </value>
         <value name="Wall_SNo" min="0" max="100"/> <!-- ordinal number in wall. Upper left is 1 -->
     </command>
