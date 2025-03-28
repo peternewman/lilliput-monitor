@@ -31,6 +31,20 @@
             <item name="HDMI2" value="0x23"/>
             <item name="HDMI2-PC" value="0x24"/>
             <item name="DP" value="0x25"/>
+            <item name="DP2" value="0x26"/>
+            <item name="DP3" value="0x27"/>
+            <item name="HDMI3" value="0x31"/>
+            <item name="HDMI3-PC" value="0x32"/>
+            <item name="HDMI4" value="0x33"/>
+            <item name="HDMI4-PC" value="0x34"/>
+            <item name="HD-BaseT" value="0x55"/>
+            <item name="MagicInfo-S" value="0x60"/>
+            <item name="Screen Mirroring" value="0x61"/>
+            <item name="USB" value="0x62"/>
+            <item name="URL Launcher" value="0x63"/>
+            <item name="Whiteboard" value="0x64"/>
+            <item name="Web Browser" value="0x65"/>
+            <item name="Remote Workspace" value="0x66"/>
             <!-- and some more -->
         </value>
         <value name="aspect"/>
@@ -68,6 +82,20 @@
             <item name="HDMI2" value="0x23"/>
             <item name="HDMI2-PC" value="0x24"/>
             <item name="DP" value="0x25"/>
+            <item name="DP2" value="0x26"/>
+            <item name="DP3" value="0x27"/>
+            <item name="HDMI3" value="0x31"/>
+            <item name="HDMI3-PC" value="0x32"/>
+            <item name="HDMI4" value="0x33"/>
+            <item name="HDMI4-PC" value="0x34"/>
+            <item name="HD-BaseT" value="0x55"/>
+            <item name="MagicInfo-S" value="0x60"/>
+            <item name="Screen Mirroring" value="0x61"/>
+            <item name="USB" value="0x62"/>
+            <item name="URL Launcher" value="0x63"/>
+            <item name="Whiteboard" value="0x64"/>
+            <item name="Web Browser" value="0x65"/>
+            <item name="Remote Workspace" value="0x66"/>
             <!-- and some more -->
         </value>
     </command>
