@@ -1,6 +1,6 @@
 {
   "name": "samsung-lfd",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A Node module to control Samsung large format displays using LAN-TCP or RS-232 with JS and human friendly commands",
   "main": "samsungd.js",
   "keywords": [

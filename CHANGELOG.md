@@ -4,5 +4,7 @@
 - Git repository
 ## 1.0.3/2024-10-28
 - Some XML improvements and fixes
+## 1.0.4/2025-03-28
+- Added 14 more inputs in XML
 ## TODO
 
