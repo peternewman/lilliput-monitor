@@ -23,7 +23,7 @@
             <!-- Ensure this list matches the input command -->
             <item name="S-Video" value="0x04"/>
             <item name="Component" value="0x08"/>
-            <item name="AV1" value="0x0C"/>
+            <item name="AV" value="0x0C"/>
             <item name="AV2" value="0x0D"/>
             <item name="SCART1" value="0x0E"/>
             <item name="PC" value="0x14"/>
@@ -35,7 +35,7 @@
             <item name="HDMI1-PC" value="0x22"/>
             <item name="HDMI2" value="0x23"/>
             <item name="HDMI2-PC" value="0x24"/>
-            <item name="DP1" value="0x25"/>
+            <item name="DP" value="0x25"/>
             <item name="DP2" value="0x26"/>
             <item name="DP3" value="0x27"/>
             <item name="HDMI3" value="0x31"/>
@@ -81,7 +81,7 @@
             <!-- Ensure this list matches the status command's input field -->
             <item name="S-Video" value="0x04"/>
             <item name="Component" value="0x08"/>
-            <item name="AV1" value="0x0C"/>
+            <item name="AV" value="0x0C"/>
             <item name="AV2" value="0x0D"/>
             <item name="SCART1" value="0x0E"/>
             <item name="PC" value="0x14"/>
@@ -93,7 +93,7 @@
             <item name="HDMI1-PC" value="0x22"/>
             <item name="HDMI2" value="0x23"/>
             <item name="HDMI2-PC" value="0x24"/>
-            <item name="DP1" value="0x25"/>
+            <item name="DP" value="0x25"/>
             <item name="DP2" value="0x26"/>
             <item name="DP3" value="0x27"/>
             <item name="HDMI3" value="0x31"/>
