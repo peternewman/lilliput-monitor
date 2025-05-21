@@ -31,11 +31,11 @@
             <item name="BNC" value="0x1E"/>
             <item name="DVI-Video" value="0x1F"/>
             <item name="MagicInfo" value="0x20"/>
-            <item name="HDMI1" value="0x21"/>
+            <item name="HDMI1, HDMI" value="0x21"/>
             <item name="HDMI1-PC" value="0x22"/>
             <item name="HDMI2" value="0x23"/>
             <item name="HDMI2-PC" value="0x24"/>
-            <item name="DP" value="0x25"/>
+            <item name="DP, DP1, DisplayPort1" value="0x25"/>
             <item name="DP2" value="0x26"/>
             <item name="DP3" value="0x27"/>
             <item name="HDMI3" value="0x31"/>
@@ -89,11 +89,11 @@
             <item name="BNC" value="0x1E"/>
             <item name="DVI-Video" value="0x1F"/>
             <item name="MagicInfo" value="0x20"/>
-            <item name="HDMI1" value="0x21"/>
+            <item name="HDMI1, HDMI" value="0x21"/>
             <item name="HDMI1-PC" value="0x22"/>
             <item name="HDMI2" value="0x23"/>
             <item name="HDMI2-PC" value="0x24"/>
-            <item name="DP" value="0x25"/>
+            <item name="DP, DP1, DisplayPort1" value="0x25"/>
             <item name="DP2" value="0x26"/>
             <item name="DP3" value="0x27"/>
             <item name="HDMI3" value="0x31"/>

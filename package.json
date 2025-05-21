@@ -1,6 +1,6 @@
 {
   "name": "samsung-lfd",
-  "version": "1.0.5",
+  "version": "1.1.0",
   "description": "A Node module to control Samsung large format displays using LAN-TCP or RS-232 with JS and human friendly commands",
   "main": "samsungd.js",
   "keywords": [
@@ -26,5 +26,6 @@
     "url": "https://github.com/magik1969/samsung-lfd/issues",
     "email": "control@infotechnika.pl"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {}
 }

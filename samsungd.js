@@ -98,7 +98,13 @@ SamsungD.prototype.setCommand = function(name, parameters){
 			if(isNaN(el)){
 				let sel = parDefArr[ind].item;
 				if(Array.isArray(sel)){
-					let item = sel.find(it => it.name.toLowerCase() == parameters[ind].toLowerCase())
+					let item = sel.find(it => {
+						let strvals = it.name.split(',');
+						strvals = strvals.map(e => e.trim().toUpperCase());
+						let strval = strvals.find(e => e == parameters[ind].toUpperCase());
+						if(strval)
+							return true;
+					})
 					if(item)
 						return Number(item.value);
 				}
@@ -218,9 +224,11 @@ SamsungD.prototype.decode = function(data){
 		if(valDefArr[0])
 			if(valDefArr[0].item){
 				let sel = valDefArr[0].item;
-				let item = sel.find(it => parseInt(it.value) == v);
-				if(item)
-					result['value'] = item.name;
+				let item = sel.find(it =>  parseInt(it.value) == v);
+				if(item){
+					let narr = item.name.split(',')
+					result['value'] = narr[0].trim();
+				}
 			}
 	}
 	else{ // multiple values
@@ -230,9 +238,11 @@ SamsungD.prototype.decode = function(data){
 			let v = valbuff[ind];
 			valObj[vname] = v;
 			if(Array.isArray(el.item)){
-				let found = el.item.find(it => parseInt(it.value) == v)
-				if(found)
-					valObj[vname] = found.name;
+				let item = el.item.find(it => parseInt(it.value) == v)
+				if(item){
+					let narr = item.name.split(',')
+					valObj[vname] = narr[0].trim();
+				}
 			}
 		});
 		result['value'] = valObj;
