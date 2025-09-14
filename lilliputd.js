@@ -2,40 +2,35 @@ const RAW = require('raw-device');
 const fs = require('fs');
 const xml2js = require('xml2js');
 
-/* SamsungD object uses RAW object as its prototype */
-SamsungD.prototype = Object.create(RAW.prototype);
-SamsungD.prototype.constructor = SamsungD;
+/* LilliputD object uses RAW object as its prototype */
+LilliputD.prototype = Object.create(RAW.prototype);
+LilliputD.prototype.constructor = LilliputD;
 
-SamsungD.prototype.addressDefaults = {
-    name: 'SamsungLFD',
-    id: 0, //0xFE all displays, no ACK
-	//tcp
-	port: 1515,
-	//serial
-	baudRate: 9600,
-	dataBits:8,
-	parity: 'none',
-	stopBits: 1
+LilliputD.prototype.addressDefaults = {
+    name: 'LilliputMonitor',
+	//UDP
+    mode: 'udp',
+	port: 11923,
 }
 
-SamsungD.prototype.optionsDefaults = {
+LilliputD.prototype.optionsDefaults = {
     disconnect: true,
 	encoding: null,
 	wDuration: 1000,
 	rDuration: 1000,
-    dataname: 'samsungd.xml',
+    dataname: 'lilliputd.xml',
 	splitter: {
 		timeout: 700
 	}
 }
 
 /**
- * Constructor for Samsung object
+ * Constructor for LilliputD object
  * @constructor
  * @param {AddressObject} address
  * @param {OptionsObject} [options]
  */
-function SamsungD(address, options={}) {
+function LilliputD(address, options={}) {
     RAW.call(this, address, options);
 	this.id = this.address.id;
 	this.data;
@@ -52,7 +47,7 @@ function SamsungD(address, options={}) {
  * @param {string} cmd  - command to encode
  * @returns {CommandObject} cmdObj
  */
-SamsungD.prototype.encode = function(cmd){
+LilliputD.prototype.encode = function(cmd){
 	if(cmd.startsWith('#')){
 		let co = this.special(cmd);
         return co;
@@ -68,32 +63,36 @@ SamsungD.prototype.encode = function(cmd){
 		name: this.name,
 		command: cmd
 	}
-	if(mode == '?')
+	if(mode == '?') {
 		cmdObj = Object.assign(cmdObj, this.getCommand(name))
-	else 
+	} else {
 		cmdObj = Object.assign(cmdObj, this.setCommand(name, parama))
+	}
 	return cmdObj
 }
 
-SamsungD.prototype.setCommand = function(name, parameters){
-	let code = Number(name); //& 0x00FF; 
-	let params = parameters.map(el => Number(el)); //może też poobcinać do bajta	
+LilliputD.prototype.setCommand = function(name, parameters){
+	let code = Number(name); //& 0x00FF;
+	let params = parameters.map(el => Number(el)); // can also truncate to a byte
 	let duration = this.options.wDuration;
 
 	let cmdef = this.data.dev.command.find(el => el.name.toLowerCase() == name.toLowerCase());
 	if(cmdef){
-		if(!cmdef.mode.includes('w')) //no set(write) mode for command
+		if(!cmdef.mode.includes('w')) {
+			//no set(write) mode for command
 			return;
+		}
 		code = Number(cmdef.code);
 		let dur = cmdef.wDuration;
 		if(dur)
 			duration = Number(dur);
 		let parDefArr = [];
 		let parDef = cmdef.value;
-		if(Array.isArray(parDef))
+		if(Array.isArray(parDef)) {
 			parDefArr.push(...parDef);
-		else 
+		} else {
 			parDefArr.push(parDef);
+		}
 		params = params.map((el, ind)  => {
 			if(isNaN(el)){
 				let sel = parDefArr[ind].item;
@@ -111,36 +110,49 @@ SamsungD.prototype.setCommand = function(name, parameters){
 			}
 			else return el;
 		})
+	} else {
+		console.log("Didn't find command for " + name)
 	}
 
-	if(isNaN(code))
+	if(isNaN(code)) {
+		console.log("Invalid code " + code)
 		return;
-	if(params.some(el => (isNaN(el)) || (el === undefined)))
+	}
+	if(params.some(el => (isNaN(el)) || (el === undefined))) {
+		console.log("Invalid params " + JSON.stringify(params))
 		return;
-	let commandStr = '\xAA';
+	}
+	let commandStr = '\x5A';
+	commandStr += String.fromCharCode(params.length + 11);
+	commandStr += '\x00';
+	commandStr += '\x20';
+	commandStr += '\x01';
+	commandStr += '\xFF';
+	commandStr += '\x00';
+	commandStr += '\x00';
 	commandStr += String.fromCharCode(code);
-	commandStr += String.fromCharCode(this.id);
-	commandStr += String.fromCharCode(params.length);
 	params.forEach((par) => {
 		commandStr += String.fromCharCode(par);
 	})
 	let b = Buffer.from(commandStr, 'ascii');
 	let chs = 0;
-	for(let i=1; i<b.length; i++){
+	for(let i=0; i<b.length; i++){
 		chs += b[i];
 	}
 	chs = chs & 0x00FF;
 	commandStr += String.fromCharCode(chs);
+	commandStr += '\xDD';
 
 	let enc = {
 		encodedStr: commandStr,
 		encoded: Buffer.from(commandStr, 'ascii'),
 		duration: duration
 	}
+	console.log("Encoded: " + enc.encoded)
 	return enc;
 }
 
-SamsungD.prototype.getCommand = function(name){
+LilliputD.prototype.getCommand = function(name){
 	let code = Number(name); //& 0x00FF;
 	let duration = this.options.rDuration
 
@@ -175,9 +187,9 @@ SamsungD.prototype.getCommand = function(name){
 /**
  * Decode response from device to friendly form
  * @param {Buffer} data - a data from splitter
- * @fires SamsungD#responseFromDevice
+ * @fires LilliputD#responseFromDevice
  */
-SamsungD.prototype.decode = function(data){
+LilliputD.prototype.decode = function(data){
 	let start = data.indexOf(0xAA);
 	if(start == -1)// not a valid vessage
 		return;
@@ -211,10 +223,10 @@ SamsungD.prototype.decode = function(data){
 	let valdef = cmdef.value;
 	if(Array.isArray(valdef))
 		valDefArr.push(...valdef);
-	else 
+	else
 		valDefArr.push(valdef);
 
-	if(valbuff.length != valDefArr.length){ //ascii response	
+	if(valbuff.length != valDefArr.length){ //ascii response
 		let str = valbuff.toString('ascii');
 		result['value'] = str.replaceAll('\x00', '')
 	}
@@ -251,4 +263,4 @@ SamsungD.prototype.decode = function(data){
 	return result;
 }
 
-module.exports = SamsungD;
+module.exports = LilliputD;

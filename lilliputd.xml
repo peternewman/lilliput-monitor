@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dev driver="lilliputd">
+<!--
+    There's a subset of Lilliput commands below. They were chosen as most useful for common tasks.
+    You can add, remove or modify them as long as you know what you are doing and the XML document remains valid.
+
+    Mode attribute says if command is read only, write only or read/write.
+    Values of wDuration and rDuration are defined in miliseconds.
+    Number values can be decimal or hexadecimal. Hex numbers must be used with prefix 0x
+-->
+    <command name="input" code="0x00" mode="w">
+        <!-- Set current input. Return string. Command: 'input input_name' -->
+        <value name="input">
+            <!-- Ensure this list matches the status command's input field -->
+            <item name="SDI1" value="0x00"/>
+            <item name="SDI2" value="0x01"/>
+            <item name="SDI3" value="0x02"/>
+            <item name="SDI4" value="0x03"/>
+            <item name="HDMI1" value="0x07"/>
+            <!-- and some more -->
+        </value>
+        <value name="unknown1">
+            <item name="val1a" value="0x10"/>
+            <item name="val1b" value="0x10"/>
+        </value>
+        <value name="unknown2">
+            <item name="val2a" value="0x32"/>
+            <item name="val2b" value="0x32"/>
+        </value>
+    </command>
+    <command name="audio" code="0x03" mode="w">
+        <value name="volume"/>
+        <value name="meter">
+            <item name="none" value="0x00"/>
+            <item name="level" value="0x10"/>
+            <item name="vector" value="0x20"/>
+            <item name="level-vector" value="0x30"/>
+        </value>
+        <value name="right-left-out"/>
+    </command>
+<!--    <command name="status" code="0xfe" mode="r">-->
+    <!-- Get current status of display. Return object. Command: 'status?' -->
+<!--        <value name="power">
+            <item name="on" value="0x01"/>
+            <item name="off" value="0x00"/>
+        </value>
+        <value name="volume"/>
+        <value name="mute">
+            <item name="on" value="0x01"/>
+            <item name="off" value="0x00"/>
+        </value>
+        <value name="input">-->
+            <!-- Ensure this list matches the input command -->
+<!--            <item name="SDI1" value="0x00"/>
+            <item name="SDI2" value="0x01"/>
+            <item name="SDI3" value="0x02"/>
+            <item name="SDI4" value="0x03"/>
+            <item name="HDMI1" value="0x07"/>-->
+            <!-- and some more -->
+<!--        </value>
+        <value name="aspect"/>
+        <value name="NTimeNF"/>
+        <value name="FTimeNF"/>
+    </command>-->
+
+</dev>	

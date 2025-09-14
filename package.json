@@ -1,30 +1,25 @@
 {
-  "name": "samsung-lfd",
-  "version": "1.1.0",
-  "description": "A Node module to control Samsung large format displays using LAN-TCP or RS-232 with JS and human friendly commands",
-  "main": "samsungd.js",
+  "name": "lilliput-monitor",
+  "version": "0.0.1",
+  "description": "A Node module to control Lilliput monitors using LAN-UDP with JS and human friendly commands",
+  "main": "lilliputd.js",
   "keywords": [
-    "samsung",
+    "lilliput",
     "display",
     "control",
-    "monitor",
-    "mdc",
-    "lfd"
+    "monitor"
   ],
-  "author": {
-    "name": "Mariusz Czernik <mariusz@infotechnika.pl>"
-  },
+  "author": "Peter Newman",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/magik1969/samsung-lfd.git"
+    "url": "git+https://github.com/peternewman/lilliput-monitor.git"
   },
   "dependencies": {
     "raw-device": "1.1.x",
     "xml2js": "^0.4.23"
   },
   "bugs": {
-    "url": "https://github.com/magik1969/samsung-lfd/issues",
-    "email": "control@infotechnika.pl"
+    "url": "https://github.com/peternewman/lilliput-monitor/issues"
   },
   "license": "MIT",
   "scripts": {}
