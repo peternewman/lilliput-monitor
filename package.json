@@ -15,7 +15,7 @@
     "url": "git+https://github.com/peternewman/lilliput-monitor.git"
   },
   "dependencies": {
-    "raw-device": "1.1.x",
+    "raw-device": "github:peternewman/raw-device#udp",
     "xml2js": "^0.4.23"
   },
   "bugs": {
