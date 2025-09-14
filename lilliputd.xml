@@ -16,16 +16,32 @@
             <item name="SDI2" value="0x01"/>
             <item name="SDI3" value="0x02"/>
             <item name="SDI4" value="0x03"/>
-            <item name="HDMI1" value="0x07"/>
+            <item name="SFP" value="0x04"/>
+            <item name="2SI" value="0x05"/>
+            <item name="Square Division" value="0x06"/>
+            <item name="HDMI" value="0x07"/>
+            <item name="Multiviewer" value="0x10"/>
             <!-- and some more -->
         </value>
-        <value name="unknown1">
-            <item name="val1a" value="0x10"/>
-            <item name="val1b" value="0x10"/>
+        <value name="mv1-2">
+            <item name="SDI1-SDI1" value="0x00"/>
+            <item name="SDI1-SDI2" value="0x01"/>
+            <item name="SDI2-SDI2" value="0x11"/>
+            <item name="SDI3-SDI3" value="0x22"/>
+            <item name="SDI3-SDI4" value="0x23"/>
+            <item name="SDI4-SDI4" value="0x33"/>
+            <item name="SFP-SFP" value="0x44"/>
+            <item name="HDMI-HDMI" value="0x55"/>
         </value>
-        <value name="unknown2">
-            <item name="val2a" value="0x32"/>
-            <item name="val2b" value="0x32"/>
+        <value name="mv3-4">
+            <item name="SDI1-SDI1" value="0x00"/>
+            <item name="SDI1-SDI2" value="0x01"/>
+            <item name="SDI2-SDI2" value="0x11"/>
+            <item name="SDI3-SDI3" value="0x22"/>
+            <item name="SDI3-SDI4" value="0x23"/>
+            <item name="SDI4-SDI4" value="0x33"/>
+            <item name="SFP-SFP" value="0x44"/>
+            <item name="HDMI-HDMI" value="0x55"/>
         </value>
     </command>
     <command name="audio" code="0x03" mode="w">

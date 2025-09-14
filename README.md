@@ -24,7 +24,7 @@ The primary exported object is `LilliputD`. It extensively uses `RAW` object fro
     - `name <string>` - default 'LilliputMonitor'. The name is included in response object to easy identify a display
     //for UDP
     - `host <string>` - required. Use valid IP address of display
-    - `port <number>` - default 11923
+    - `port <number>` - default 19523
     //for stream
     - `stream <Stream>` - required. The stream must be an opened read/write Node stream. This mode is used when multiple displays are chained with RS232 cables and connected to a single system serial port. LilliputD object does not care about the stream. You have to maintain stream yourself (open, close, error handling).
 - `OptionsObject <Object>` - optional, default is `{wDuration: 1000, rDuration: 1000, disconnect: true, splitter: {timeout: 700}}`

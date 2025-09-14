@@ -10,7 +10,7 @@ LilliputD.prototype.addressDefaults = {
     name: 'LilliputMonitor',
 	//UDP
     mode: 'udp',
-	port: 11923,
+	port: 19523,
 }
 
 LilliputD.prototype.optionsDefaults = {
