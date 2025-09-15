@@ -47,12 +47,67 @@
     <command name="audio" code="0x03" mode="w">
         <value name="volume"/>
         <value name="meter">
-            <item name="none" value="0x00"/>
-            <item name="level" value="0x10"/>
-            <item name="vector" value="0x20"/>
-            <item name="level-vector" value="0x30"/>
+            <item name="None" value="0x00"/>
+            <item name="Level" value="0x10"/>
+            <item name="Vector-1-2" value="0x20"/>
+            <item name="Vector-3-4" value="0x21"/>
+            <item name="Vector-5-6" value="0x22"/>
+            <item name="Vector-7-8" value="0x23"/>
+            <item name="Vector-9-10" value="0x24"/>
+            <item name="Vector-11-12" value="0x25"/>
+            <item name="Vector-13-14" value="0x26"/>
+            <item name="Vector-15-16" value="0x27"/>
+            <item name="Level-Vector-1-2" value="0x30"/>
+            <item name="Level-Vector-3-4" value="0x31"/>
+            <item name="Level-Vector-5-6" value="0x32"/>
+            <item name="Level-Vector-7-8" value="0x33"/>
+            <item name="Level-Vector-9-10" value="0x34"/>
+            <item name="Level-Vector-11-12" value="0x35"/>
+            <item name="Level-Vector-13-14" value="0x36"/>
+            <item name="Level-Vector-15-16" value="0x37"/>
         </value>
-        <value name="right-left-out"/>
+        <value name="right-left-out">
+            <item name="2-1" value="0x10"/>
+            <item name="4-3" value="0x32"/>
+            <item name="6-5" value="0x54"/>
+            <item name="8-7" value="0x76"/>
+            <item name="10-9" value="0x98"/>
+            <item name="12-11" value="0xba"/>
+            <item name="14-13" value="0xdc"/>
+            <item name="16-15" value="0xfe"/>
+        </value>
+    </command>
+    <command name="umd" code="0x05" mode="w">
+        <value name="tally">
+            <item name="Off" value="0x02"/>
+            <item name="Red" value="0x12"/>
+            <item name="Green" value="0x22"/>
+            <item name="Yellow" value="0x32"/>
+        </value>
+        <value name="umd1"/>
+        <value name="umd2"/>
+        <value name="umd3"/>
+        <value name="umd4"/>
+        <value name="umd5"/>
+        <value name="umd6"/>
+        <value name="umd7"/>
+        <value name="umd8"/>
+        <value name="umd9"/>
+        <value name="umd10"/>
+        <value name="umd11"/>
+        <value name="umd12"/>
+        <value name="umd13"/>
+        <value name="umd14"/>
+        <value name="umd15"/>
+        <value name="umd16"/>
+        <value name="unknown1">
+            <item name="val1a" value="0x22"/>
+            <item name="val1b" value="0x22"/>
+        </value>
+        <value name="unknown2">
+            <item name="val2a" value="0xf2"/>
+            <item name="val2b" value="0xf2"/>
+        </value>
     </command>
 <!--    <command name="status" code="0xfe" mode="r">-->
     <!-- Get current status of display. Return object. Command: 'status?' -->
@@ -61,22 +116,19 @@
             <item name="off" value="0x00"/>
         </value>
         <value name="volume"/>
-        <value name="mute">
-            <item name="on" value="0x01"/>
-            <item name="off" value="0x00"/>
-        </value>
         <value name="input">-->
             <!-- Ensure this list matches the input command -->
 <!--            <item name="SDI1" value="0x00"/>
             <item name="SDI2" value="0x01"/>
             <item name="SDI3" value="0x02"/>
             <item name="SDI4" value="0x03"/>
-            <item name="HDMI1" value="0x07"/>-->
+            <item name="SFP" value="0x04"/>
+            <item name="2SI" value="0x05"/>
+            <item name="Square Division" value="0x06"/>
+            <item name="HDMI" value="0x07"/>
+            <item name="Multiviewer" value="0x10"/>-->
             <!-- and some more -->
 <!--        </value>
-        <value name="aspect"/>
-        <value name="NTimeNF"/>
-        <value name="FTimeNF"/>
     </command>-->
 
 </dev>	
