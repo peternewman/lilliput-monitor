@@ -190,25 +190,24 @@ LilliputD.prototype.getCommand = function(name){
  * @fires LilliputD#responseFromDevice
  */
 LilliputD.prototype.decode = function(data){
-	let start = data.indexOf(0xAA);
+//	console.log('Decoding: ' + JSON.stringify(data))
+//	console.log('Decoding: ' + data.toString())
+	let start = data.indexOf(0x5A);
 	if(start == -1)// not a valid vessage
 		return;
 	let trimed;
 	if(start >= 0)
 		trimed = data.subarray(start);
-	let id = trimed[2];
-	if(id != this.id) //not for me response. Can happen when RS232 chain is used
-		return;
 	let result = {
 		name: this.name,
-        raw: data
-    }
-	let dlength = trimed[3];
-	let ack = String.fromCharCode(trimed[4]);
-	result['status'] = ack=='A'? 'OK': 'ERR';
-	let rcmd = trimed[5];
+		raw: data
+	}
+	let dlength = trimed[1];
+//	let ack = String.fromCharCode(trimed[4]);
+//	result['status'] = ack=='A'? 'OK': 'ERR';
+	let rcmd = trimed[8];
 	result['req'] = rcmd;
-	let valbuff = trimed.subarray(6, 6+dlength-2);
+	let valbuff = trimed.subarray(9, 9+dlength-2);
 	let valarr = [...valbuff];
 	result['value'] = (valarr.length == 1)? valarr[0]: valarr;
 
@@ -227,6 +226,7 @@ LilliputD.prototype.decode = function(data){
 		valDefArr.push(valdef);
 
 	if(valbuff.length != valDefArr.length){ //ascii response
+		console.log('Expected: ' + valDefArr.length + ' got: ' + valbuff.length)
 		let str = valbuff.toString('ascii');
 		result['value'] = str.replaceAll('\x00', '')
 	}

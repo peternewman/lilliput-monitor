@@ -109,16 +109,75 @@
             <item name="val2b" value="0xf2"/>
         </value>
     </command>
-<!--    <command name="status" code="0xfe" mode="r">-->
-    <!-- Get current status of display. Return object. Command: 'status?' -->
-<!--        <value name="power">
-            <item name="on" value="0x01"/>
-            <item name="off" value="0x00"/>
-        </value>
-        <value name="volume"/>
-        <value name="input">-->
+    <command name="status" code="0xfe" mode="r">
+        <!-- Get current status of display. Return object. Command: 'status?' -->
+        <value name="unknown1"/>
+        <value name="brightness"/>
+        <value name="contrast"/>
+        <value name="saturation"/>
+        <value name="tint"/>
+        <value name="sharpness"/>
+        <value name="backlight"/>
+        <!-- Begin unknown guesswork... -->
+        <value name="unknown1"/>
+        <value name="unknown1"/>
+        <value name="unknown1"/>
+        <value name="unknown1"/>
+        <value name="unknown1"/>
+        <value name="unknown1"/>
+        <value name="unknown1"/>
+        <value name="unknown1"/>
+        <value name="unknown1"/>
+        <value name="unknown1"/>
+        <value name="unknown1"/>
+        <value name="unknown1"/>
+        <value name="unknown1"/>
+        <value name="unknown1"/>
+        <!-- End unknown guesswork... -->
+        <value name="format1"/>
+        <value name="format2"/>
+        <value name="format3"/>
+        <value name="format4"/>
+        <value name="format5"/>
+        <value name="format6"/>
+        <value name="format7"/>
+        <value name="format8"/>
+        <value name="format9"/>
+        <value name="format10"/>
+        <value name="format11"/>
+        <value name="format12"/>
+        <value name="format13"/>
+        <value name="format14"/>
+        <value name="format15"/>
+        <value name="format16"/>
+        <value name="format17"/>
+        <value name="format18"/>
+        <value name="name1"/>
+        <value name="name2"/>
+        <value name="name3"/>
+        <value name="name4"/>
+        <value name="name5"/>
+        <value name="name6"/>
+        <value name="name7"/>
+        <value name="name8"/>
+        <value name="name9"/>
+        <value name="name10"/>
+        <value name="name11"/>
+        <value name="name12"/>
+        <value name="name13"/>
+        <value name="name14"/>
+        <value name="name15"/>
+        <value name="name16"/>
+        <!-- Begin unknown guesswork... -->
+        <value name="unknown1"/>
+        <value name="unknown1"/>
+        <value name="unknown1"/>
+        <value name="unknown1"/>
+        <value name="unknown1"/>
+        <value name="unknown1"/>
+        <value name="input">
             <!-- Ensure this list matches the input command -->
-<!--            <item name="SDI1" value="0x00"/>
+            <item name="SDI1" value="0x00"/>
             <item name="SDI2" value="0x01"/>
             <item name="SDI3" value="0x02"/>
             <item name="SDI4" value="0x03"/>
@@ -126,9 +185,10 @@
             <item name="2SI" value="0x05"/>
             <item name="Square Division" value="0x06"/>
             <item name="HDMI" value="0x07"/>
-            <item name="Multiviewer" value="0x10"/>-->
+            <item name="Multiviewer" value="0x10"/>
             <!-- and some more -->
-<!--        </value>
-    </command>-->
+        </value>
+        <!-- End unknown guesswork... -->
+    </command>
 
 </dev>	
