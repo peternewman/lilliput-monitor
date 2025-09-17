@@ -55,7 +55,7 @@ LilliputD.prototype.encode = function(cmd){
 	let res = /(\w+)(\?)? ?([\w-, ]*)/.exec(cmd)
 	if(!res)
 		return;
-    let name = res[1];
+	let name = res[1];
 	let mode = res[2];
 	let parama = res[3].split(',');
 	parama = parama.map(par => par.trim());
@@ -148,7 +148,8 @@ LilliputD.prototype.setCommand = function(name, parameters){
 		encoded: Buffer.from(commandStr, 'ascii'),
 		duration: duration
 	}
-	console.log("Encoded: " + enc.encoded)
+	//console.log("Encoded: " + enc.encoded)
+	console.log("Encoded: " + enc.encoded.toString('hex'))
 	return enc;
 }
 
@@ -165,22 +166,32 @@ LilliputD.prototype.getCommand = function(name){
 	}
 	if(isNaN(code))
 		return;
-	let commandStr = '\xAA';
-	commandStr += String.fromCharCode(code);
-	commandStr += String.fromCharCode(this.id);
+
+	let commandStr = '\x5A';
+	commandStr += String.fromCharCode(0 + 11);
 	commandStr += '\x00';
+	commandStr += '\x20';
+	commandStr += '\x01';
+	commandStr += '\xFF';
+	commandStr += '\x00';
+	commandStr += '\x00';
+	commandStr += String.fromCharCode(code);
 	let buf = Buffer.from(commandStr, 'ascii');
 	let chs = 0;
-	for(let i=1; i<buf.length; i++){
+	for(let i=0; i<buf.length; i++){
 		chs += buf[i];
 	}
 	chs = chs & 0x00FF;
 	commandStr += String.fromCharCode(chs);
+	commandStr += '\xDD';
+
 	let enc = {
 		encodedStr: commandStr,
 		encoded: Buffer.from(commandStr, 'ascii'),
 		duration: duration
 	}
+	//console.log("Encoded: " + enc.encoded)
+	console.log("Encoded: " + enc.encoded.toString('hex'))
 	return enc;
 }
 
