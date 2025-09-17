@@ -138,15 +138,64 @@
         <value name="tint"/>
         <value name="sharpness"/>
         <value name="backlight"/>
+        <value name="color-temp">
+            <item name="3200K" value="0x00"/>
+            <item name="5500K" value="0x01"/>
+            <item name="6500K" value="0x02"/>
+            <item name="7500K" value="0x03"/>
+            <item name="9300K" value="0x04"/>
+            <item name="User" value="0x05"/>
+        </value>
+        <value name="source">
+            <!-- Ensure this list matches the source command -->
+            <item name="SDI1" value="0x00"/>
+            <item name="SDI2" value="0x01"/>
+            <item name="SDI3" value="0x02"/>
+            <item name="SDI4" value="0x03"/>
+            <item name="SFP" value="0x04"/>
+            <item name="2SI" value="0x05"/>
+            <item name="Square Division" value="0x06"/>
+            <item name="HDMI" value="0x07"/>
+            <item name="Multiviewer" value="0x10"/>
+            <!-- and some more -->
+        </value>
         <!-- Begin unknown guesswork... -->
         <value name="unknown1"/>
         <value name="unknown1"/>
-        <value name="unknown1"/>
-        <value name="unknown1"/>
-        <value name="unknown1"/>
-        <value name="unknown1"/>
-        <value name="unknown1"/>
-        <value name="unknown1"/>
+        <value name="unknown-marker-thickness"/>
+        <!-- End unknown guesswork... -->
+        <value name="volume"/>
+        <value name="meter">
+            <item name="None" value="0x00"/>
+            <item name="Level" value="0x10"/>
+            <item name="Vector-1-2" value="0x20"/>
+            <item name="Vector-3-4" value="0x21"/>
+            <item name="Vector-5-6" value="0x22"/>
+            <item name="Vector-7-8" value="0x23"/>
+            <item name="Vector-9-10" value="0x24"/>
+            <item name="Vector-11-12" value="0x25"/>
+            <item name="Vector-13-14" value="0x26"/>
+            <item name="Vector-15-16" value="0x27"/>
+            <item name="Level-Vector-1-2" value="0x30"/>
+            <item name="Level-Vector-3-4" value="0x31"/>
+            <item name="Level-Vector-5-6" value="0x32"/>
+            <item name="Level-Vector-7-8" value="0x33"/>
+            <item name="Level-Vector-9-10" value="0x34"/>
+            <item name="Level-Vector-11-12" value="0x35"/>
+            <item name="Level-Vector-13-14" value="0x36"/>
+            <item name="Level-Vector-15-16" value="0x37"/>
+        </value>
+        <value name="right-left-out">
+            <item name="2-1" value="0x10"/>
+            <item name="4-3" value="0x32"/>
+            <item name="6-5" value="0x54"/>
+            <item name="8-7" value="0x76"/>
+            <item name="10-9" value="0x98"/>
+            <item name="12-11" value="0xba"/>
+            <item name="14-13" value="0xdc"/>
+            <item name="16-15" value="0xfe"/>
+        </value>
+        <!-- Begin unknown guesswork... -->
         <value name="unknown1"/>
         <value name="unknown1"/>
         <value name="unknown1"/>
@@ -195,19 +244,6 @@
         <value name="unknown1"/>
         <value name="unknown1"/>
         <value name="unknown1"/>
-        <value name="source">
-            <!-- Ensure this list matches the source command -->
-            <item name="SDI1" value="0x00"/>
-            <item name="SDI2" value="0x01"/>
-            <item name="SDI3" value="0x02"/>
-            <item name="SDI4" value="0x03"/>
-            <item name="SFP" value="0x04"/>
-            <item name="2SI" value="0x05"/>
-            <item name="Square Division" value="0x06"/>
-            <item name="HDMI" value="0x07"/>
-            <item name="Multiviewer" value="0x10"/>
-            <!-- and some more -->
-        </value>
         <!-- End unknown guesswork... -->
     </command>
 
