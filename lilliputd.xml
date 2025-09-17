@@ -44,6 +44,24 @@
             <item name="HDMI-HDMI" value="0x55"/>
         </value>
     </command>
+    <command name="picture" code="0x01" mode="w">
+        <value name="brightness"/>
+        <value name="contrast"/>
+        <value name="saturation"/>
+        <value name="tint"/>
+        <value name="sharpness"/>
+        <value name="backlight"/>
+        <value name="color-temp">
+            <item name="3200K" value="0x00"/>
+            <item name="5500K" value="0x01"/>
+            <item name="6500K" value="0x02"/>
+            <item name="7500K" value="0x03"/>
+            <item name="9300K" value="0x04"/>
+            <item name="User" value="0x05"/>
+        </value>
+    </command>
+    <command name="marker" code="0x02" mode="w">
+    </command>
     <command name="audio" code="0x03" mode="w">
         <value name="volume"/>
         <value name="meter">
@@ -76,6 +94,8 @@
             <item name="14-13" value="0xdc"/>
             <item name="16-15" value="0xfe"/>
         </value>
+    </command>
+    <command name="function" code="0x04" mode="w">
     </command>
     <command name="umd" code="0x05" mode="w">
         <value name="tally">
