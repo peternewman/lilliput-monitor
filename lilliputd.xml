@@ -8,10 +8,10 @@
     Values of wDuration and rDuration are defined in miliseconds.
     Number values can be decimal or hexadecimal. Hex numbers must be used with prefix 0x
 -->
-    <command name="input" code="0x00" mode="w">
-        <!-- Set current input. Return string. Command: 'input input_name' -->
-        <value name="input">
-            <!-- Ensure this list matches the status command's input field -->
+    <command name="source" code="0x00" mode="w">
+        <!-- Set current source. Return string. Command: 'source source_name' -->
+        <value name="source">
+            <!-- Ensure this list matches the status command's source field -->
             <item name="SDI1" value="0x00"/>
             <item name="SDI2" value="0x01"/>
             <item name="SDI3" value="0x02"/>
@@ -175,8 +175,8 @@
         <value name="unknown1"/>
         <value name="unknown1"/>
         <value name="unknown1"/>
-        <value name="input">
-            <!-- Ensure this list matches the input command -->
+        <value name="source">
+            <!-- Ensure this list matches the source command -->
             <item name="SDI1" value="0x00"/>
             <item name="SDI2" value="0x01"/>
             <item name="SDI3" value="0x02"/>
