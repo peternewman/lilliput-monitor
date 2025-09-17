@@ -45,12 +45,12 @@
         </value>
     </command>
     <command name="picture" code="0x01" mode="w">
-        <value name="brightness"/>
-        <value name="contrast"/>
-        <value name="saturation"/>
-        <value name="tint"/>
-        <value name="sharpness"/>
-        <value name="backlight"/>
+        <value name="brightness" min="0" max="100"/>
+        <value name="contrast" min="0" max="100"/>
+        <value name="saturation" min="0" max="100"/>
+        <value name="tint" min="0" max="100"/>
+        <value name="sharpness" min="0" max="100"/>
+        <value name="backlight" min="0" max="100"/>
         <value name="color-temp">
             <item name="3200K" value="0x00"/>
             <item name="5500K" value="0x01"/>
@@ -63,7 +63,7 @@
     <command name="marker" code="0x02" mode="w">
     </command>
     <command name="audio" code="0x03" mode="w">
-        <value name="volume"/>
+        <value name="volume" min="0" max="100"/>/>
         <value name="meter">
             <item name="None" value="0x00"/>
             <item name="Level" value="0x10"/>
@@ -132,12 +132,12 @@
     <command name="status" code="0xfe" mode="r">
         <!-- Get current status of display. Return object. Command: 'status?' -->
         <value name="unknown1"/>
-        <value name="brightness"/>
-        <value name="contrast"/>
-        <value name="saturation"/>
-        <value name="tint"/>
-        <value name="sharpness"/>
-        <value name="backlight"/>
+        <value name="brightness" min="0" max="100"/>
+        <value name="contrast" min="0" max="100"/>
+        <value name="saturation" min="0" max="100"/>
+        <value name="tint" min="0" max="100"/>
+        <value name="sharpness" min="0" max="100"/>
+        <value name="backlight" min="0" max="100"/>
         <value name="color-temp">
             <item name="3200K" value="0x00"/>
             <item name="5500K" value="0x01"/>
@@ -164,7 +164,7 @@
         <value name="unknown1"/>
         <value name="unknown-marker-thickness"/>
         <!-- End unknown guesswork... -->
-        <value name="volume"/>
+        <value name="volume" min="0" max="100"/>
         <value name="meter">
             <item name="None" value="0x00"/>
             <item name="Level" value="0x10"/>
