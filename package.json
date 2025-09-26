@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "raw-device": "github:peternewman/raw-device#udp",
-    "xml2js": "^0.4.23"
+    "xml2js": "^0.6.2"
   },
   "bugs": {
     "url": "https://github.com/peternewman/lilliput-monitor/issues"
