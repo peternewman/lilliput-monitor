@@ -21,9 +21,10 @@
             <item name="Square Division" value="0x06"/>
             <item name="HDMI" value="0x07"/>
             <item name="Multiviewer" value="0x10"/>
-            <!-- and some more -->
+            <!-- and maybe some more -->
         </value>
         <value name="mv1-2">
+            <!-- Ensure this list matches the status command's multiviewer field -->
             <item name="SDI1-SDI1" value="0x00"/>
             <item name="SDI1-SDI2" value="0x01"/>
             <item name="SDI2-SDI2" value="0x11"/>
@@ -34,6 +35,7 @@
             <item name="HDMI-HDMI" value="0x55"/>
         </value>
         <value name="mv3-4">
+            <!-- Ensure this list matches the status command's multiviewer field -->
             <item name="SDI1-SDI1" value="0x00"/>
             <item name="SDI1-SDI2" value="0x01"/>
             <item name="SDI2-SDI2" value="0x11"/>
@@ -63,7 +65,7 @@
     <command name="marker" code="0x02" mode="w">
     </command>
     <command name="audio" code="0x03" mode="w">
-        <value name="volume" min="0" max="100"/>/>
+        <value name="volume" min="0" max="100"/>
         <value name="meter">
             <item name="None" value="0x00"/>
             <item name="Level" value="0x10"/>
@@ -98,11 +100,63 @@
     <command name="function" code="0x04" mode="w">
     </command>
     <command name="umd" code="0x05" mode="w">
-        <value name="tally">
-            <item name="Off" value="0x02"/>
-            <item name="Red" value="0x12"/>
-            <item name="Green" value="0x22"/>
-            <item name="Yellow" value="0x32"/>
+        <value name="tally-umd1">
+            <item name="Off-Off-White" value="0x00"/>
+            <item name="Red-Off-White" value="0x10"/>
+            <item name="Green-Off-White" value="0x20"/>
+            <item name="Yellow-Off-White" value="0x30"/>
+            <item name="Off-Off-Red" value="0x01"/>
+            <item name="Red-Off-Red" value="0x11"/>
+            <item name="Green-Off-Red" value="0x21"/>
+            <item name="Yellow-Off-Red" value="0x31"/>
+            <item name="Off-Off-Green" value="0x02"/>
+            <item name="Red-Off-Green" value="0x12"/>
+            <item name="Green-Off-Green" value="0x22"/>
+            <item name="Yellow-Off-Green" value="0x32"/>
+            <item name="Off-Off-Blue" value="0x03"/>
+            <item name="Red-Off-Blue" value="0x13"/>
+            <item name="Green-Off-Blue" value="0x23"/>
+            <item name="Yellow-Off-Blue" value="0x33"/>
+            <item name="Off-Off-Yellow" value="0x04"/>
+            <item name="Red-Off-Yellow" value="0x14"/>
+            <item name="Green-Off-Yellow" value="0x24"/>
+            <item name="Yellow-Off-Yellow" value="0x34"/>
+            <item name="Off-Off-Cyan" value="0x05"/>
+            <item name="Red-Off-Cyan" value="0x15"/>
+            <item name="Green-Off-Cyan" value="0x25"/>
+            <item name="Yellow-Off-Cyan" value="0x35"/>
+            <item name="Off-Off-Magenta" value="0x06"/>
+            <item name="Red-Off-Magenta" value="0x16"/>
+            <item name="Green-Off-Magenta" value="0x26"/>
+            <item name="Yellow-Off-Magenta" value="0x36"/>
+            <item name="Off-On-White" value="0x08"/>
+            <item name="Red-On-White" value="0x18"/>
+            <item name="Green-On-White" value="0x28"/>
+            <item name="Yellow-On-White" value="0x38"/>
+            <item name="Off-On-Red" value="0x09"/>
+            <item name="Red-On-Red" value="0x19"/>
+            <item name="Green-On-Red" value="0x29"/>
+            <item name="Yellow-On-Red" value="0x39"/>
+            <item name="Off-On-Green" value="0x0a"/>
+            <item name="Red-On-Green" value="0x1a"/>
+            <item name="Green-On-Green" value="0x2a"/>
+            <item name="Yellow-On-Green" value="0x3a"/>
+            <item name="Off-On-Blue" value="0x0b"/>
+            <item name="Red-On-Blue" value="0x1b"/>
+            <item name="Green-On-Blue" value="0x2b"/>
+            <item name="Yellow-On-Blue" value="0x3b"/>
+            <item name="Off-On-Yellow" value="0x0c"/>
+            <item name="Red-On-Yellow" value="0x1c"/>
+            <item name="Green-On-Yellow" value="0x2c"/>
+            <item name="Yellow-On-Yellow" value="0x3c"/>
+            <item name="Off-On-Cyan" value="0x0d"/>
+            <item name="Red-On-Cyan" value="0x1d"/>
+            <item name="Green-On-Cyan" value="0x2d"/>
+            <item name="Yellow-On-Cyan" value="0x3d"/>
+            <item name="Off-On-Magenta" value="0x0e"/>
+            <item name="Red-On-Magenta" value="0x1e"/>
+            <item name="Green-On-Magenta" value="0x2e"/>
+            <item name="Yellow-On-Magenta" value="0x3e"/>
         </value>
         <value name="umd1"/>
         <value name="umd2"/>
@@ -120,13 +174,21 @@
         <value name="umd14"/>
         <value name="umd15"/>
         <value name="umd16"/>
-        <value name="unknown1">
-            <item name="val1a" value="0x22"/>
-            <item name="val1b" value="0x22"/>
+        <value name="umd3-umd2">
+            <item name="Off-Off" value="0x22"/>
+            <item name="Off-On" value="0x2a"/>
+            <item name="On-Off" value="0xa2"/>
+            <item name="On-On" value="0xaa"/>
         </value>
-        <value name="unknown2">
-            <item name="val2a" value="0xf2"/>
-            <item name="val2b" value="0xf2"/>
+        <value name="umdnum-umd4">
+            <item name="0-Off" value="0x02"/>
+            <item name="0-On" value="0x0a"/>
+            <item name="1-Off" value="0x12"/>
+            <item name="1-On" value="0x1a"/>
+            <item name="2-Off" value="0x22"/>
+            <item name="2-On" value="0x2a"/>
+            <item name="3-Off" value="0x32"/>
+            <item name="3-On" value="0x3a"/>
         </value>
     </command>
     <command name="status" code="0xfe" mode="r">
@@ -160,9 +222,9 @@
             <!-- and some more -->
         </value>
         <!-- Begin unknown guesswork... -->
-        <value name="unknown1"/>
-        <value name="unknown1"/>
-        <value name="unknown-marker-thickness"/>
+        <value name="marker1"/>
+        <value name="marker2"/>
+        <value name="marker3-thickness"/>
         <!-- End unknown guesswork... -->
         <value name="volume" min="0" max="100"/>
         <value name="meter">
@@ -196,13 +258,70 @@
             <item name="16-15" value="0xfe"/>
         </value>
         <!-- Begin unknown guesswork... -->
-        <value name="unknown1"/>
-        <value name="unknown1"/>
-        <value name="unknown1"/>
-        <value name="unknown1"/>
-        <value name="unknown1"/>
-        <value name="unknown1"/>
+        <value name="function1"/>
+        <value name="function2"/>
+        <value name="function3"/>
+        <value name="function4"/>
+        <value name="function5"/>
         <!-- End unknown guesswork... -->
+        <value name="tally-umd1">
+            <item name="Off-Off-White" value="0x00"/>
+            <item name="Red-Off-White" value="0x10"/>
+            <item name="Green-Off-White" value="0x20"/>
+            <item name="Yellow-Off-White" value="0x30"/>
+            <item name="Off-Off-Red" value="0x01"/>
+            <item name="Red-Off-Red" value="0x11"/>
+            <item name="Green-Off-Red" value="0x21"/>
+            <item name="Yellow-Off-Red" value="0x31"/>
+            <item name="Off-Off-Green" value="0x02"/>
+            <item name="Red-Off-Green" value="0x12"/>
+            <item name="Green-Off-Green" value="0x22"/>
+            <item name="Yellow-Off-Green" value="0x32"/>
+            <item name="Off-Off-Blue" value="0x03"/>
+            <item name="Red-Off-Blue" value="0x13"/>
+            <item name="Green-Off-Blue" value="0x23"/>
+            <item name="Yellow-Off-Blue" value="0x33"/>
+            <item name="Off-Off-Yellow" value="0x04"/>
+            <item name="Red-Off-Yellow" value="0x14"/>
+            <item name="Green-Off-Yellow" value="0x24"/>
+            <item name="Yellow-Off-Yellow" value="0x34"/>
+            <item name="Off-Off-Cyan" value="0x05"/>
+            <item name="Red-Off-Cyan" value="0x15"/>
+            <item name="Green-Off-Cyan" value="0x25"/>
+            <item name="Yellow-Off-Cyan" value="0x35"/>
+            <item name="Off-Off-Magenta" value="0x06"/>
+            <item name="Red-Off-Magenta" value="0x16"/>
+            <item name="Green-Off-Magenta" value="0x26"/>
+            <item name="Yellow-Off-Magenta" value="0x36"/>
+            <item name="Off-On-White" value="0x08"/>
+            <item name="Red-On-White" value="0x18"/>
+            <item name="Green-On-White" value="0x28"/>
+            <item name="Yellow-On-White" value="0x38"/>
+            <item name="Off-On-Red" value="0x09"/>
+            <item name="Red-On-Red" value="0x19"/>
+            <item name="Green-On-Red" value="0x29"/>
+            <item name="Yellow-On-Red" value="0x39"/>
+            <item name="Off-On-Green" value="0x0a"/>
+            <item name="Red-On-Green" value="0x1a"/>
+            <item name="Green-On-Green" value="0x2a"/>
+            <item name="Yellow-On-Green" value="0x3a"/>
+            <item name="Off-On-Blue" value="0x0b"/>
+            <item name="Red-On-Blue" value="0x1b"/>
+            <item name="Green-On-Blue" value="0x2b"/>
+            <item name="Yellow-On-Blue" value="0x3b"/>
+            <item name="Off-On-Yellow" value="0x0c"/>
+            <item name="Red-On-Yellow" value="0x1c"/>
+            <item name="Green-On-Yellow" value="0x2c"/>
+            <item name="Yellow-On-Yellow" value="0x3c"/>
+            <item name="Off-On-Cyan" value="0x0d"/>
+            <item name="Red-On-Cyan" value="0x1d"/>
+            <item name="Green-On-Cyan" value="0x2d"/>
+            <item name="Yellow-On-Cyan" value="0x3d"/>
+            <item name="Off-On-Magenta" value="0x0e"/>
+            <item name="Red-On-Magenta" value="0x1e"/>
+            <item name="Green-On-Magenta" value="0x2e"/>
+            <item name="Yellow-On-Magenta" value="0x3e"/>
+        </value>
         <value name="format1"/>
         <value name="format2"/>
         <value name="format3"/>
@@ -237,15 +356,46 @@
         <value name="name14"/>
         <value name="name15"/>
         <value name="name16"/>
+        <value name="umd3-umd2">
+            <item name="Off-Off" value="0x22"/>
+            <item name="Off-On" value="0x2a"/>
+            <item name="On-Off" value="0xa2"/>
+            <item name="On-On" value="0xaa"/>
+        </value>
+        <value name="umdnum-umd4">
+            <item name="0-Off" value="0x02"/>
+            <item name="0-On" value="0x0a"/>
+            <item name="1-Off" value="0x12"/>
+            <item name="1-On" value="0x1a"/>
+            <item name="2-Off" value="0x22"/>
+            <item name="2-On" value="0x2a"/>
+            <item name="3-Off" value="0x32"/>
+            <item name="3-On" value="0x3a"/>
+        </value>
+        <value name="mv1-2">
+            <!-- Ensure this list matches the source command mv options -->
+            <item name="SDI1-SDI1" value="0x00"/>
+            <item name="SDI1-SDI2" value="0x01"/>
+            <item name="SDI2-SDI2" value="0x11"/>
+            <item name="SDI3-SDI3" value="0x22"/>
+            <item name="SDI3-SDI4" value="0x23"/>
+            <item name="SDI4-SDI4" value="0x33"/>
+            <item name="SFP-SFP" value="0x44"/>
+            <item name="HDMI-HDMI" value="0x55"/>
+        </value>
+        <value name="mv3-4">
+            <!-- Ensure this list matches the source command mv options -->
+            <item name="SDI1-SDI1" value="0x00"/>
+            <item name="SDI1-SDI2" value="0x01"/>
+            <item name="SDI2-SDI2" value="0x11"/>
+            <item name="SDI3-SDI3" value="0x22"/>
+            <item name="SDI3-SDI4" value="0x23"/>
+            <item name="SDI4-SDI4" value="0x33"/>
+            <item name="SFP-SFP" value="0x44"/>
+            <item name="HDMI-HDMI" value="0x55"/>
+        </value>
         <!-- Begin unknown guesswork... -->
-        <value name="unknown1"/>
-        <value name="unknown1"/>
-        <value name="unknown1"/>
-        <value name="unknown1"/>
-        <value name="unknown1"/>
-        <value name="unknown1"/>
-        <value name="unknown1"/>
+        <value name="unknown2"/>
         <!-- End unknown guesswork... -->
     </command>
-
 </dev>	
