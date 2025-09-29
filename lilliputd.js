@@ -218,7 +218,8 @@ LilliputD.prototype.decode = function(data){
 //	result['status'] = ack=='A'? 'OK': 'ERR';
 	let rcmd = trimed[8];
 	result['req'] = rcmd;
-	let valbuff = trimed.subarray(9, 9+dlength-2);
+	// length is total packet length so subtract checksum and end byte
+	let valbuff = trimed.subarray(9, dlength-2);
 	let valarr = [...valbuff];
 	result['value'] = (valarr.length == 1)? valarr[0]: valarr;
 
