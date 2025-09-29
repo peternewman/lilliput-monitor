@@ -35,21 +35,31 @@
             <item name="SDI2-SDI2" value="0x11"/>
             <item name="SDI2-SDI3" value="0x12"/>
             <item name="SDI2-SDI4" value="0x13"/>
-            <item name="SDI-SFP" value="0x14"/>
-            <item name="SDI-HDMI" value="0x15"/>
+            <item name="SDI2-SFP" value="0x14"/>
+            <item name="SDI2-HDMI" value="0x15"/>
             <item name="SDI3-SDI1" value="0x20"/>
             <item name="SDI3-SDI2" value="0x21"/>
             <item name="SDI3-SDI3" value="0x22"/>
             <item name="SDI3-SDI4" value="0x23"/>
-            <item name="SDI-SFP" value="0x24"/>
-            <item name="SDI-HDMI" value="0x25"/>
+            <item name="SDI3-SFP" value="0x24"/>
+            <item name="SDI3-HDMI" value="0x25"/>
             <item name="SDI4-SDI1" value="0x30"/>
             <item name="SDI4-SDI2" value="0x31"/>
             <item name="SDI4-SDI3" value="0x32"/>
             <item name="SDI4-SDI4" value="0x33"/>
-            <item name="SDI-SFP" value="0x34"/>
-            <item name="SDI-HDMI" value="0x35"/>
+            <item name="SDI4-SFP" value="0x34"/>
+            <item name="SDI4-HDMI" value="0x35"/>
+            <item name="SFP-SDI1" value="0x40"/>
+            <item name="SFP-SDI2" value="0x41"/>
+            <item name="SFP-SDI3" value="0x42"/>
+            <item name="SFP-SDI4" value="0x43"/>
             <item name="SFP-SFP" value="0x44"/>
+            <item name="SFP-HDMI" value="0x45"/>
+            <item name="HDMI-SDI1" value="0x50"/>
+            <item name="HDMI-SDI2" value="0x51"/>
+            <item name="HDMI-SDI3" value="0x52"/>
+            <item name="HDMI-SDI4" value="0x53"/>
+            <item name="HDMI-SFP" value="0x54"/>
             <item name="HDMI-HDMI" value="0x55"/>
         </value>
         <value name="mv4-3">
@@ -64,21 +74,31 @@
             <item name="SDI2-SDI2" value="0x11"/>
             <item name="SDI2-SDI3" value="0x12"/>
             <item name="SDI2-SDI4" value="0x13"/>
-            <item name="SDI-SFP" value="0x14"/>
-            <item name="SDI-HDMI" value="0x15"/>
+            <item name="SDI2-SFP" value="0x14"/>
+            <item name="SDI2-HDMI" value="0x15"/>
             <item name="SDI3-SDI1" value="0x20"/>
             <item name="SDI3-SDI2" value="0x21"/>
             <item name="SDI3-SDI3" value="0x22"/>
             <item name="SDI3-SDI4" value="0x23"/>
-            <item name="SDI-SFP" value="0x24"/>
-            <item name="SDI-HDMI" value="0x25"/>
+            <item name="SDI3-SFP" value="0x24"/>
+            <item name="SDI3-HDMI" value="0x25"/>
             <item name="SDI4-SDI1" value="0x30"/>
             <item name="SDI4-SDI2" value="0x31"/>
             <item name="SDI4-SDI3" value="0x32"/>
             <item name="SDI4-SDI4" value="0x33"/>
-            <item name="SDI-SFP" value="0x34"/>
-            <item name="SDI-HDMI" value="0x35"/>
+            <item name="SDI4-SFP" value="0x34"/>
+            <item name="SDI4-HDMI" value="0x35"/>
+            <item name="SFP-SDI1" value="0x40"/>
+            <item name="SFP-SDI2" value="0x41"/>
+            <item name="SFP-SDI3" value="0x42"/>
+            <item name="SFP-SDI4" value="0x43"/>
             <item name="SFP-SFP" value="0x44"/>
+            <item name="SFP-HDMI" value="0x45"/>
+            <item name="HDMI-SDI1" value="0x50"/>
+            <item name="HDMI-SDI2" value="0x51"/>
+            <item name="HDMI-SDI3" value="0x52"/>
+            <item name="HDMI-SDI4" value="0x53"/>
+            <item name="HDMI-SFP" value="0x54"/>
             <item name="HDMI-HDMI" value="0x55"/>
         </value>
     </command>
@@ -420,21 +440,31 @@
             <item name="SDI2-SDI2" value="0x11"/>
             <item name="SDI2-SDI3" value="0x12"/>
             <item name="SDI2-SDI4" value="0x13"/>
-            <item name="SDI-SFP" value="0x14"/>
-            <item name="SDI-HDMI" value="0x15"/>
+            <item name="SDI2-SFP" value="0x14"/>
+            <item name="SDI2-HDMI" value="0x15"/>
             <item name="SDI3-SDI1" value="0x20"/>
             <item name="SDI3-SDI2" value="0x21"/>
             <item name="SDI3-SDI3" value="0x22"/>
             <item name="SDI3-SDI4" value="0x23"/>
-            <item name="SDI-SFP" value="0x24"/>
-            <item name="SDI-HDMI" value="0x25"/>
+            <item name="SDI3-SFP" value="0x24"/>
+            <item name="SDI3-HDMI" value="0x25"/>
             <item name="SDI4-SDI1" value="0x30"/>
             <item name="SDI4-SDI2" value="0x31"/>
             <item name="SDI4-SDI3" value="0x32"/>
             <item name="SDI4-SDI4" value="0x33"/>
-            <item name="SDI-SFP" value="0x34"/>
-            <item name="SDI-HDMI" value="0x35"/>
+            <item name="SDI4-SFP" value="0x34"/>
+            <item name="SDI4-HDMI" value="0x35"/>
+            <item name="SFP-SDI1" value="0x40"/>
+            <item name="SFP-SDI2" value="0x41"/>
+            <item name="SFP-SDI3" value="0x42"/>
+            <item name="SFP-SDI4" value="0x43"/>
             <item name="SFP-SFP" value="0x44"/>
+            <item name="SFP-HDMI" value="0x45"/>
+            <item name="HDMI-SDI1" value="0x50"/>
+            <item name="HDMI-SDI2" value="0x51"/>
+            <item name="HDMI-SDI3" value="0x52"/>
+            <item name="HDMI-SDI4" value="0x53"/>
+            <item name="HDMI-SFP" value="0x54"/>
             <item name="HDMI-HDMI" value="0x55"/>
         </value>
         <value name="mv4-3">
@@ -449,21 +479,31 @@
             <item name="SDI2-SDI2" value="0x11"/>
             <item name="SDI2-SDI3" value="0x12"/>
             <item name="SDI2-SDI4" value="0x13"/>
-            <item name="SDI-SFP" value="0x14"/>
-            <item name="SDI-HDMI" value="0x15"/>
+            <item name="SDI2-SFP" value="0x14"/>
+            <item name="SDI2-HDMI" value="0x15"/>
             <item name="SDI3-SDI1" value="0x20"/>
             <item name="SDI3-SDI2" value="0x21"/>
             <item name="SDI3-SDI3" value="0x22"/>
             <item name="SDI3-SDI4" value="0x23"/>
-            <item name="SDI-SFP" value="0x24"/>
-            <item name="SDI-HDMI" value="0x25"/>
+            <item name="SDI3-SFP" value="0x24"/>
+            <item name="SDI3-HDMI" value="0x25"/>
             <item name="SDI4-SDI1" value="0x30"/>
             <item name="SDI4-SDI2" value="0x31"/>
             <item name="SDI4-SDI3" value="0x32"/>
             <item name="SDI4-SDI4" value="0x33"/>
-            <item name="SDI-SFP" value="0x34"/>
-            <item name="SDI-HDMI" value="0x35"/>
+            <item name="SDI4-SFP" value="0x34"/>
+            <item name="SDI4-HDMI" value="0x35"/>
+            <item name="SFP-SDI1" value="0x40"/>
+            <item name="SFP-SDI2" value="0x41"/>
+            <item name="SFP-SDI3" value="0x42"/>
+            <item name="SFP-SDI4" value="0x43"/>
             <item name="SFP-SFP" value="0x44"/>
+            <item name="SFP-HDMI" value="0x45"/>
+            <item name="HDMI-SDI1" value="0x50"/>
+            <item name="HDMI-SDI2" value="0x51"/>
+            <item name="HDMI-SDI3" value="0x52"/>
+            <item name="HDMI-SDI4" value="0x53"/>
+            <item name="HDMI-SFP" value="0x54"/>
             <item name="HDMI-HDMI" value="0x55"/>
         </value>
         <!-- Begin unknown guesswork... -->
