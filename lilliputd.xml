@@ -339,11 +339,11 @@
             <item name="Multiviewer" value="0x10"/>
             <!-- and some more -->
         </value>
-        <!-- Begin unknown guesswork... -->
+        <!-- Begin guesswork... -->
         <value name="marker1"/>
         <value name="marker2"/>
         <value name="marker3-thickness"/>
-        <!-- End unknown guesswork... -->
+        <!-- End guesswork... -->
         <value name="volume" min="0" max="100"/>
         <value name="meter">
             <item name="None" value="0x00"/>
@@ -375,13 +375,13 @@
             <item name="14-13" value="0xdc"/>
             <item name="16-15" value="0xfe"/>
         </value>
-        <!-- Begin unknown guesswork... -->
+        <!-- Begin guesswork... -->
         <value name="function1"/>
         <value name="function2"/>
         <value name="function3"/>
         <value name="function4"/>
         <value name="function5"/>
-        <!-- End unknown guesswork... -->
+        <!-- End guesswork... -->
         <value name="tally-umd1">
             <item name="Off-Off-White" value="0x00"/>
             <item name="Off-Off-Red" value="0x01"/>
