@@ -18,9 +18,14 @@
     "raw-device": "github:peternewman/raw-device#udp",
     "xml2js": "^0.6.2"
   },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  },
   "bugs": {
     "url": "https://github.com/peternewman/lilliput-monitor/issues"
   },
   "license": "MIT",
-  "scripts": {}
+  "scripts": {
+    "test": "jest --silent=false"
+  }
 }
