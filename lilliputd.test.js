@@ -17,7 +17,7 @@ describe('LilliputD', () => {
 		jest.clearAllMocks()
 	})
 
-	describe('encoder', () => {
+	describe('encode', () => {
 		test('should handle setting source request', () => {
 			expect(instance.encode('source Multiviewer,SDI1-SDI2,SDI3-SDI4')).toMatchObject({
 				"encoded": Buffer.from('5a0e002001ff000000100123bcdd', 'hex'),
@@ -47,7 +47,7 @@ describe('LilliputD', () => {
 		})
 	})
 
-	describe('decoder', () => {
+	describe('decode', () => {
 		test('should handle normal status response', () => {
 			expect(instance.decode(Buffer.from('5a470020010200fffe0033213232006402070400060000104000000400024e6f205369676e616c2020202020202020204d6f6e69746f72202020202020202020220210320110dd', 'hex'))).toMatchObject({
 				"name": "LilliputMonitor",
